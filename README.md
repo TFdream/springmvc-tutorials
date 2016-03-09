@@ -1,2 +1,2 @@
-# springmvc-codelab
-Spring MVC 4 sample code
+# springmvc-samples
+springmvc4 samples
