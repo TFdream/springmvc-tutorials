@@ -1,4 +1,4 @@
-package com.ricky.codelab.springmvc;
+package com.ricky.codelab.webapp;
 
 public class App {
 
