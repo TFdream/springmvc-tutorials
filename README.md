@@ -1,2 +1,2 @@
-# springmvc-samples
-springmvc4 samples
+# SpringMVC-samples
+SpringMVC 4.2 samples
