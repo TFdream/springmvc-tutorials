@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task" xmlns:util="http://www.springframework.org/schema/util" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	   xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd"
+	   default-lazy-init="false">
+
+	<util:properties id="db" location="classpath:mysql.properties"/>
+
+	<context:component-scan base-package="com.ricky.codelab" />
+
+	<context:annotation-config />
+
+	<import resource="spring-mybatis.xml" />
+	<import resource="spring-mvc.xml"/>
+
+	<bean id="asyncThreadPool" class="java.util.concurrent.ThreadPoolExecutor">
+		<constructor-arg index="0"  value="10"/>
+		<constructor-arg index="1"  value="100"/>
+		<constructor-arg index="2" value="10"/>
+		<constructor-arg index="3" value="SECONDS"/>
+		<constructor-arg index="4">
+			<bean class="java.util.concurrent.LinkedBlockingQueue"/>
+		</constructor-arg>
+	</bean>
+</beans>
