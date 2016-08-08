@@ -27,4 +27,16 @@
 			<bean class="java.util.concurrent.LinkedBlockingQueue"/>
 		</constructor-arg>
 	</bean>
+
+	<!-- 使用注解注入properties中的值 -->
+	<bean id="config"
+		  class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath:config.properties</value>
+			</list>
+		</property>
+		<!-- 设置编码格式 -->
+		<property name="fileEncoding" value="UTF-8"></property>
+	</bean>
 </beans>
