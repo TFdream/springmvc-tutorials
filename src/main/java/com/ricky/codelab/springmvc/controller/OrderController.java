@@ -1,7 +1,7 @@
 package com.ricky.codelab.springmvc.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.ricky.codelab.springmvc.domain.Oder;
+import com.ricky.codelab.springmvc.domain.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,17 +18,17 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Controller
 @RequestMapping("/order")
-public class OderController {
+public class OrderController {
 
     private AtomicLong counter = new AtomicLong(1);
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public Oder create(@RequestBody String data){
+    public Order create(@RequestBody String data){
 
         System.out.println("data:"+data);
 
-        Oder order = JSON.parseObject(data, Oder.class);
+        Order order = JSON.parseObject(data, Order.class);
         order.setId(counter.getAndIncrement());
 
         return order;
@@ -36,7 +36,7 @@ public class OderController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public Oder create(@RequestBody Oder oder){
+    public Order create(@RequestBody Order oder){
 
         System.out.println("order:"+ oder);
         oder.setId(counter.getAndIncrement());
