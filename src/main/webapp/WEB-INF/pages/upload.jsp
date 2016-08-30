@@ -10,19 +10,15 @@
         <div id="newUpload1">
             <input type="file" name="file">
         </div>
-
-        <input type="button" id="btn_add1" value="增加一行" >
         <input type="submit" value="上传" >
     </form>
 
     <br>
-    <br>
     <h1>springMVC包装类上传文件</h1>
-    <form name="userForm2" action="/file/upload2" enctype="multipart/form-data" method="post"">
+    <form name="userForm2" action="/file/upload2" enctype="multipart/form-data" method="post">
     <div id="newUpload2">
         <input type="file" name="file">
     </div>
-    <input type="button" id="btn_add2" value="增加一行" >
     <input type="submit" value="上传" >
     </form>
 </body>

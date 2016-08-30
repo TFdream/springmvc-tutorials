@@ -25,6 +25,8 @@ import java.util.Iterator;
 @RequestMapping("/file")
 public class FileUploadController {
 
+    private File dir = new File("F:/upload/");
+
     @RequestMapping(value = "/upload1", method = RequestMethod.POST)
     public String upload(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -66,15 +68,17 @@ public class FileUploadController {
     private void saveUploadFile(MultipartFile file) throws IOException {
         if(file != null){
             //取得当前上传文件的文件名称
-            String myFileName = file.getOriginalFilename();
+            String originalFilename = file.getOriginalFilename();
             //如果名称不为“”,说明该文件存在，否则说明该文件不存在
-            if(myFileName.trim() !=""){
-                System.out.println(myFileName);
+            if(originalFilename.trim() !=""){
                 //重命名上传后的文件名
-                String fileName = "upload_" + file.getOriginalFilename();
+                String fileName = "upload_" + originalFilename;
+                System.out.println("file:"+originalFilename+",new file:"+fileName);
                 //定义上传路径
-                String path = "F:/upload/" + fileName;
-                File localFile = new File(path);
+                if(!dir.exists()){
+                    dir.mkdirs();
+                }
+                File localFile = new File(dir, fileName);
                 file.transferTo(localFile);
             }
         }
