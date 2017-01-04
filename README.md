@@ -1,2 +1,2 @@
-# SpringMVC4-samples
-SpringMVC 4.2 samples
+# springmvc4-in-action
+SpringMVC 4.3 practice code.
