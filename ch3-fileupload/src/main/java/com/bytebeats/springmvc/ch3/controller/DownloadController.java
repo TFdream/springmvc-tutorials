@@ -20,7 +20,7 @@ import java.net.URLEncoder;
 @RequestMapping("/file")
 public class DownloadController {
 
-    private File dir = new File("F:/upload/");
+    private File dir = new File("D:/temp");
 
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public String download(@RequestParam("filename") String fileName, HttpServletRequest request,

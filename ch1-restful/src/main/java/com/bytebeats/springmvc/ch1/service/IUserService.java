@@ -1,6 +1,7 @@
 package com.bytebeats.springmvc.ch1.service;
 
 import com.bytebeats.springmvc.ch1.domain.User;
+import java.util.List;
 
 /**
  * ${DESCRIPTION}
@@ -10,5 +11,7 @@ import com.bytebeats.springmvc.ch1.domain.User;
  */
 public interface IUserService {
 
-    public User findUserByName(String username);
+    User findUserByName(String username);
+
+    List<User> queryList(int limit);
 }

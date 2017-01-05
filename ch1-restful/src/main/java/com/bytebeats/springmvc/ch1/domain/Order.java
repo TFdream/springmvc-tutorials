@@ -9,6 +9,7 @@ package com.bytebeats.springmvc.ch1.domain;
 public class Order {
     private long id;
     private String category;
+    private Long userId;    //用户id
     private String receiveAddress;
     private double amount;
 
@@ -26,6 +27,14 @@ public class Order {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getReceiveAddress() {

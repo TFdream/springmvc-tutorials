@@ -25,7 +25,7 @@ import java.util.Iterator;
 @RequestMapping("/file")
 public class UploadController {
 
-    private File dir = new File("F:/upload/");
+    private File dir = new File(System.getProperty("java.io.tmpdir", "/temp"));
 
     @RequestMapping(value = "/upload1", method = RequestMethod.POST)
     public String upload(HttpServletRequest request, HttpServletResponse response) throws IOException {
