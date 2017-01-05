@@ -1,4 +1,4 @@
-package com.bytebeats.springmvc.ch1.controller;
+package com.bytebeats.springmvc.ch3.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ import java.net.URLEncoder;
  */
 @Controller
 @RequestMapping("/file")
-public class FileDownloadController {
+public class DownloadController {
 
     private File dir = new File("F:/upload/");
 

@@ -1,4 +1,4 @@
-package com.bytebeats.springmvc.ch1.controller;
+package com.bytebeats.springmvc.ch3.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +23,7 @@ import java.util.Iterator;
  */
 @Controller
 @RequestMapping("/file")
-public class FileUploadController {
+public class UploadController {
 
     private File dir = new File("F:/upload/");
 

@@ -1,7 +1,7 @@
 package com.bytebeats.springmvc.ch1.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.bytebeats.springmvc.ch1.domain.Order;
+import com.bytebeats.springmvc.common.util.JsonUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +28,7 @@ public class OrderController {
 
         System.out.println("data:"+data);
 
-        Order order = JSON.parseObject(data, Order.class);
+        Order order = JsonUtils.fromJson(data, Order.class);
         order.setId(counter.getAndIncrement());
 
         return order;

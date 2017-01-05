@@ -11,13 +11,16 @@
     <url>http://maven.apache.org</url>
 
 	<modules>
+        <module>common</module>
 		<module>ch1-restful</module>
-	</modules>
+        <module>ch3-fileupload</module>
+        <module>ch2-servlet3-feature</module>
+    </modules>
 	
     <properties>
-        <springframework.version>4.3.2.RELEASE</springframework.version>
+        <springframework.version>4.3.3.RELEASE</springframework.version>
         <java.version>1.7</java.version>
-        <jackson.version>2.8.1</jackson.version>
+        <jackson.version>2.8.2</jackson.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -60,6 +63,7 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${springframework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
@@ -85,6 +89,7 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!--jackson-->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
@@ -124,18 +129,14 @@
                 <version>1.0.21</version>
             </dependency>
 
+            <!--gson-->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>2.7</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.11</version>
-            </dependency>
-
+            <!--fileupload-->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
@@ -145,6 +146,13 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>2.5</version>
+            </dependency>
+
+            <!--okhttp3-->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>3.5.0</version>
             </dependency>
 
             <!--log-->
@@ -219,7 +227,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.6.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>

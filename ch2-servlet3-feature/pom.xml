@@ -1,22 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-		<groupId>com.bytebeats.springmvc</groupId>
-		<artifactId>springmvc4-in-action</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-	
-	<modelVersion>4.0.0</modelVersion>
+        <artifactId>springmvc4-in-action</artifactId>
+        <groupId>com.bytebeats.springmvc</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <artifactId>ch1-restful</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ch2-servlet3-feature</artifactId>
     <packaging>war</packaging>
 
-    <name>ch1-restful</name>
+    <name>ch2-servlet3-feature</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -134,40 +130,7 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>beta</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources_beta</directory>
-                    </resource>
-                </resources>
-            </build>
-            <!-- 把当前profile设置为默认profile，可以同时这是多个为默认-->
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>online</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources_online</directory>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
-        <finalName>ch1-restful</finalName>
+        <finalName>ch2-servlet3-feature</finalName>
     </build>
 </project>
