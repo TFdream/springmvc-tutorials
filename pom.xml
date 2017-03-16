@@ -12,9 +12,10 @@
 
 	<modules>
         <module>common</module>
-		<module>ch1-restful</module>
-        <module>ch3-fileupload</module>
-        <module>ch2-servlet3-feature</module>
+		<module>spring-restful-sample</module>
+        <module>spring-servlet3-sample</module>
+        <module>spring-upload-sample</module>
+        <module>spring-session-sample</module>
     </modules>
 	
     <properties>
@@ -57,7 +58,11 @@
                 <artifactId>spring-beans</artifactId>
                 <version>${springframework.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
@@ -73,6 +78,22 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session</artifactId>
+                <version>1.3.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session-data-redis</artifactId>
+                <version>1.3.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>1.8.1.RELEASE</version>
             </dependency>
 
             <dependency>
