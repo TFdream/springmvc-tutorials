@@ -1,12 +1,17 @@
 package com.bytebeats.spring.session.sample.model;
 
+import java.io.Serializable;
+
 /**
  * ${DESCRIPTION}
  *
  * @author Ricky Fung
  * @date 2017-04-06 20:16
  */
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 962135815780832287L;
+
     private Long id;
     private String name;
     private String password;

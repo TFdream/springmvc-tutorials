@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common</artifactId>
+    <artifactId>spring-common</artifactId>
     <packaging>jar</packaging>
 
-    <name>common</name>
+    <name>spring-common</name>
     <url>http://maven.apache.org</url>
 
     <properties>
