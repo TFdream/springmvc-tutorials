@@ -64,7 +64,7 @@
 
         <dependency>
             <groupId>com.bytebeats.springmvc</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>spring-common</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 

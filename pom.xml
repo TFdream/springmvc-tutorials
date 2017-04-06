@@ -11,7 +11,7 @@
     <url>http://maven.apache.org</url>
 
 	<modules>
-        <module>common</module>
+        <module>spring-common</module>
 		<module>spring-restful-sample</module>
         <module>spring-servlet3-sample</module>
         <module>spring-upload-sample</module>
