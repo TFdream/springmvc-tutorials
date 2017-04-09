@@ -13,9 +13,7 @@
   </context-param>
 
   <!-- spring session -->
-  <!--The DelegatingFilterProxy will look up a Bean by the name of springSessionRepositoryFilter and cast it to a Filter.
-  For every request that DelegatingFilterProxy is invoked, the springSessionRepositoryFilter will be invoked.-->
-  <filter>
+    <filter>
     <filter-name>springSessionRepositoryFilter</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
   </filter>
