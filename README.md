@@ -1,2 +1,11 @@
-# springmvc4-in-action
-SpringMVC 4.3 practice code.
+# SpringMVC-Tutorials
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Build Status](https://travis-ci.org/TiFG/springmvc-tutorials.svg?branch=master)](https://travis-ci.org/TiFG/springmvc-tutorials)
+
+
+## Overview
+SpringMVC 4.x tutorials.
+
+## Requirements
+The minimum requirements to run the quick start are:
+* JDK 1.7 or above
+* A java-based project management software like [Maven](https://maven.apache.org/) or [Gradle](http://gradle.org/)

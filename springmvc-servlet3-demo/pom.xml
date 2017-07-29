@@ -1,16 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>springmvc4-in-action</artifactId>
-        <groupId>com.bytebeats.springmvc</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.mindflow</groupId>
+    <artifactId>springmvc-tutorials</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-upload-sample</artifactId>
+    <artifactId>springmvc-servlet3-demo</artifactId>
     <packaging>war</packaging>
 
-    <name>spring-upload-sample</name>
+    <name>springmvc-servlet3-demo</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
@@ -62,8 +63,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.bytebeats.springmvc</groupId>
-            <artifactId>spring-common</artifactId>
+            <groupId>com.mindflow</groupId>
+            <artifactId>springmvc-common</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 
@@ -133,7 +134,6 @@
     </dependencies>
 
     <build>
-        <finalName>ch3-fileupload</finalName>
+        <finalName>ch2-servlet3-feature</finalName>
     </build>
-
 </project>

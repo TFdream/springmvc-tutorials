@@ -2,20 +2,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bytebeats.springmvc</groupId>
-    <artifactId>springmvc4-in-action</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.mindflow</groupId>
+    <artifactId>springmvc-tutorials</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
     <name>springmvc4-in-action</name>
     <url>http://maven.apache.org</url>
 
 	<modules>
-        <module>spring-common</module>
-		<module>spring-restful-sample</module>
-        <module>spring-servlet3-sample</module>
-        <module>spring-upload-sample</module>
-        <module>spring-session-sample</module>
+        <module>springmvc-common</module>
+		<module>springmvc-restful-demo</module>
+        <module>springmvc-servlet3-demo</module>
+        <module>springmvc-upload-demo</module>
+        <module>spring-session-demo</module>
     </modules>
 	
     <properties>

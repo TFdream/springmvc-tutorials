@@ -1,22 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-		<groupId>com.bytebeats.springmvc</groupId>
-		<artifactId>springmvc4-in-action</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-	
-	<modelVersion>4.0.0</modelVersion>
+        <groupId>com.mindflow</groupId>
+    <artifactId>springmvc-tutorials</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-restful-sample</artifactId>
+    <artifactId>springmvc-upload-demo</artifactId>
     <packaging>war</packaging>
 
-    <name>spring-restful-sample</name>
+    <name>springmvc-upload-demo</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -67,8 +62,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.bytebeats.springmvc</groupId>
-            <artifactId>spring-common</artifactId>
+            <groupId>com.mindflow</groupId>
+            <artifactId>springmvc-common</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 
@@ -137,40 +132,8 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>beta</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources_beta</directory>
-                    </resource>
-                </resources>
-            </build>
-            <!-- 把当前profile设置为默认profile，可以同时这是多个为默认-->
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>online</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources_online</directory>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
-        <finalName>ch1-restful</finalName>
+        <finalName>ch3-fileupload</finalName>
     </build>
+
 </project>
