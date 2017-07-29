@@ -4,16 +4,14 @@
 	   xmlns:context="http://www.springframework.org/schema/context"
 	   xsi:schemaLocation="
 		   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		   http://www.springframework.org/schema/context
-		   http://www.springframework.org/schema/context/spring-context.xsd"
-	   default-lazy-init="false">
+		   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.bytebeats.springmvc.common" >
+	<context:component-scan base-package="apple.springmvc.common" >
 	</context:component-scan>
 
 	<!--OkHttp config-->
-	<bean id="httpclient" class="com.bytebeats.springmvc.common.http.OkHttpClientFactoryBean">
+	<bean id="httpclient" class="apple.springmvc.common.http.OkHttpClientFactoryBean">
 		<property name="readTimeout" value="6000"></property>
 		<property name="connectTimeout" value="6000"></property>
 		<property name="requestRetryEnabled" value="false"></property>

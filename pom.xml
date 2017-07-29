@@ -16,6 +16,7 @@
         <module>springmvc-servlet3-demo</module>
         <module>springmvc-upload-demo</module>
         <module>spring-session-demo</module>
+        <module>springmvc-zxing-demo</module>
     </modules>
 
     <properties>
@@ -29,7 +30,6 @@
         <jackson.version>2.8.2</jackson.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -71,11 +71,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-expression</artifactId>
             <version>${springframework.version}</version>
         </dependency>
 
