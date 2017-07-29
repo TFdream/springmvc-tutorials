@@ -9,3 +9,6 @@ SpringMVC 4.x tutorials.
 The minimum requirements to run the quick start are:
 * JDK 1.7 or above
 * A java-based project management software like [Maven](https://maven.apache.org/) or [Gradle](http://gradle.org/)
+
+## Documentation
+[Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
