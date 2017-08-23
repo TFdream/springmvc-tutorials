@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
     <mvc:annotation-driven/>
-    <context:component-scan base-package="apple.springmvc.servlet3.controller">
+    <context:component-scan base-package="springmvc.tutorials.async.controller">
     </context:component-scan>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">

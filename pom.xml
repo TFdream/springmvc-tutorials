@@ -12,12 +12,12 @@
 
     <modules>
         <module>springmvc-restful-demo</module>
-        <module>springmvc-servlet3-demo</module>
         <module>springmvc-upload-demo</module>
         <module>spring-session-demo</module>
+        <module>springmvc-mybatis-demo</module>
         <module>springmvc-zxing-demo</module>
         <module>servlet3x-feature-demo</module>
-        <module>springmvc-mybatis-demo</module>
+        <module>springmvc-async-demo</module>
     </modules>
 
     <properties>

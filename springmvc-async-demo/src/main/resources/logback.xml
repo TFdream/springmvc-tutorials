@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<contextName>springmvc-servlet3</contextName>
+	<contextName>springmvc-async-demo</contextName>
 
 	<!-- 日志文件存储路径 -->
 	<property name="LOG_HOME" value="D:/logs" />
