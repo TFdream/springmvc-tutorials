@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mindflow.mybatis3.mapper.trade.OrderMapper" >
+    <resultMap id="BaseResultMap" type="Order" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <id column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="category" property="category" jdbcType="VARCHAR" />
+        <result column="total_price" property="totalPrice" jdbcType="DOUBLE" />
+        <result column="amount" property="amount" jdbcType="INTEGER" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="SMALLINT" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id,user_id,category,total_price,amount,address,status,create_time,modify_time
+    </sql>
+
+    <select id="getOrderList" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select <include refid="Base_Column_List" />
+        from tb_order where user_id = #{userId,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insert" parameterType="Order" useGeneratedKeys="true" keyProperty="id" >
+        insert into tb_order (user_id,category,total_price,amount,address,status,create_time,modify_time)
+        values (#{userId,jdbcType=BIGINT},#{category,jdbcType=VARCHAR}, #{totalPrice,jdbcType=DOUBLE},
+        #{amount,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT},
+        #{createTime,jdbcType=TIMESTAMP},#{modifyTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+</mapper>

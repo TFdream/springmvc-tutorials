@@ -25,12 +25,6 @@
             <artifactId>commons-io</artifactId>
             <version>2.5</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.mindflow</groupId>
-            <artifactId>springmvc-common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

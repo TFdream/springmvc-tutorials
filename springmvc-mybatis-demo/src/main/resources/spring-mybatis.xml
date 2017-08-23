@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <util:properties id="db" location="classpath:db.properties"/>
+
+    <!-- 配置数据源 -->
+    <bean name="parentDatasource" abstract="true" class="com.alibaba.druid.pool.DruidDataSource">
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="1" />
+        <!-- 连接池最大使用连接数量 -->
+        <property name="maxActive" value="100" />
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="20" />
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="30000" />
+        <property name="validationQuery" value="SELECT 1" />
+        <property name="testOnBorrow" value="true" />
+        <property name="testOnReturn" value="true" />
+        <property name="testWhileIdle" value="true" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="25200000" />
+        <!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandoned" value="true" />
+        <!-- 1800秒，也就是30分钟 -->
+        <property name="removeAbandonedTimeout" value="1800" />
+        <!-- 关闭abanded连接时输出错误日志 -->
+        <property name="logAbandoned" value="true" />
+        <!-- 监控数据库 -->
+        <property name="filters" value="mergeStat" />
+    </bean>
+
+    <!-- trade数据源 -->
+    <bean name="trade" init-method="init" destroy-method="close" parent="parentDatasource">
+        <property name="driverClassName" value="#{db['trade.jdbc.driverClassName']}" />
+        <property name="url" value="#{db['trade.jdbc.url']}" />
+        <property name="username" value="#{db['trade.jdbc.username']}" />
+        <property name="password" value="#{db['trade.jdbc.password']}" />
+    </bean>
+
+    <!--trade mybatis config-->
+    <bean id="tradeSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="trade" />
+        <property name="mapperLocations" value="classpath*:mapper/trade/*Mapper.xml" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="typeAliasesPackage" value="com.mindflow.mybatis3.model.trade" />
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.mindflow.mybatis3.mapper.trade" />
+        <property name="sqlSessionFactoryBeanName" value="tradeSqlSessionFactory" />
+    </bean>
+
+    <!-- 配置事务 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="trade" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

@@ -19,11 +19,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.mindflow</groupId>
-            <artifactId>springmvc-common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
+
     </dependencies>
 
     <build>

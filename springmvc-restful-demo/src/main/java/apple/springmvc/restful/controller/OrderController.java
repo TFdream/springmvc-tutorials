@@ -1,7 +1,7 @@
 package apple.springmvc.restful.controller;
 
 import apple.springmvc.restful.domain.Order;
-import apple.springmvc.common.util.JsonUtils;
+import apple.springmvc.restful.util.JsonUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
