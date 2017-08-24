@@ -5,12 +5,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
 /**
  * @author Ricky Fung
  */
-@WebFilter(urlPatterns = "/*", asyncSupported = true)
+@WebFilter(urlPatterns = "/*", asyncSupported = true, initParams = {@WebInitParam(name = "encoding", value = "utf-8")})
 public class DemoFilter  implements Filter {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

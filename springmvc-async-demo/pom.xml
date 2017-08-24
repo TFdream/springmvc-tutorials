@@ -19,7 +19,7 @@
     </dependencies>
 
     <build>
-        <finalName>springmvc-servlet3-demo</finalName>
+        <finalName>springmvc-async-demo</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

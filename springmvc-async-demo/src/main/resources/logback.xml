@@ -12,7 +12,7 @@
 	</appender>
 
 	<appender name="appInfo" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_HOME}/info/springmvc-servlet3-info.log</file>
+		<file>${LOG_HOME}/info/springmvc-async-info.log</file>
 		<appender>true</appender>
 		<Encoding>UTF-8</Encoding>
 
@@ -21,7 +21,7 @@
 		</filter>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_HOME}/info/springmvc-servlet3.%d{yyyy-MM-dd}-info.log.gz
+			<fileNamePattern>${LOG_HOME}/info/springmvc-async.%d{yyyy-MM-dd}-info.log.gz
 			</fileNamePattern>
 			<maxHistory>360</maxHistory>
 		</rollingPolicy>
