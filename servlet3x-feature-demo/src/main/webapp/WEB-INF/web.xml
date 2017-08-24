@@ -4,44 +4,38 @@
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>Servlet 3.1 Demo</display-name>
+    <display-name>servlet3x feature demo</display-name>
 
-  <filter>
-    <filter-name>characterEncodingFilter</filter-name>
-    <filter-class>com.mindflow.servlet3.demo.filter.CharacterEncodingFilter</filter-class>
-    <init-param>
-      <param-name>encoding</param-name>
-      <param-value>UTF-8</param-value>
-    </init-param>
-    <init-param>
-      <param-name>forceEncoding</param-name>
-      <param-value>true</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>characterEncodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>com.mindflow.servlet3.demo.filter.CharacterEncodingFilter</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-  <servlet>
-    <servlet-name>DemoServlet</servlet-name>
-    <servlet-class>com.mindflow.servlet3.demo.servlet.DemoServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>FooServlet</servlet-name>
-    <servlet-class>com.mindflow.servlet3.demo.servlet.FooServlet</servlet-class>
-  </servlet>
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>com.mindflow.servlet3.demo.servlet.DemoServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>DemoServlet</servlet-name>
-    <url-pattern>/demo</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>FooServlet</servlet-name>
-    <url-pattern>/foo</url-pattern>
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
 
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

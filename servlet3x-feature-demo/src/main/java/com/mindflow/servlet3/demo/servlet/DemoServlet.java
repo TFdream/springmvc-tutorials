@@ -1,6 +1,8 @@
 package com.mindflow.servlet3.demo.servlet;
 
 import com.mindflow.servlet3.demo.util.RandomUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
@@ -16,6 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Ricky Fung
  */
 public class DemoServlet extends HttpServlet {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final AtomicInteger counter = new AtomicInteger(1);
     private ExecutorService pool = Executors.newFixedThreadPool(5);
 
@@ -27,7 +30,7 @@ public class DemoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final int seq = counter.getAndIncrement();
-        System.out.println("收到请求:"+seq);
+        logger.info("收到请求:{}", seq);
         final AsyncContext context = req.startAsync();
         context.setTimeout(10*1000);
         //1.开启异步线程
@@ -35,11 +38,11 @@ public class DemoServlet extends HttpServlet {
             @Override
             public void run() {
 
-                int time = RandomUtils.genRandom();
-                System.out.println("请求seq:"+ seq +" 休眠"+time+" ms");
+                int time = RandomUtils.genRandom(5000);
+                logger.info("请求seq:{} 休眠{} ms", seq, time);
                 try {
                     sleep(time);
-                    System.out.println("请求seq:"+ seq +" 休眠结束，返回结果");
+                    logger.info("请求seq:{}休眠结束，返回结果", seq);
                     String result = String.format("request seq:%s success", seq);
                     context.getResponse().getWriter().write(result);
                 } catch (Exception e) {
@@ -51,11 +54,7 @@ public class DemoServlet extends HttpServlet {
         });
     }
 
-    private void sleep(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    private void sleep(long millis) throws InterruptedException {
+        Thread.sleep(millis);
     }
 }

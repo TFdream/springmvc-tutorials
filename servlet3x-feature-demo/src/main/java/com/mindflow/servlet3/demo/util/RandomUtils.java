@@ -7,13 +7,12 @@ import java.util.Random;
  */
 public abstract class RandomUtils {
 
-    public static int genRandom() {
-        Random random = new Random();
-        return random.nextInt();
+    public static int genRandom(int bound) {
+        return (int) (Math.random() * bound);
     }
 
-    public static int genRandom(long seed) {
-        Random random = new Random(seed);
-        return random.nextInt();
+    public static int getRandom(int bound) {
+        Random random = new Random();
+        return random.nextInt(bound);
     }
 }
